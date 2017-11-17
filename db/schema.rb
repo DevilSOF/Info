@@ -18,7 +18,4 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "DBVer", id: false, force: :cascade do |t|
   end
 
-  create_table "articles", id: false, force: :cascade do |t|
-  end
-
 end

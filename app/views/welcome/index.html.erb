@@ -1,48 +1,15 @@
 
-<h1>Database Version List</h1>
-
-
-<%= render 'hidden' %>
-
-<br>
-<% result = @client.execute("
-  SELECT
-  MAX(Result.Ver_ID) AS 'Version',
-  MAX(Result.Date) AS 'Date',
-  Result.SONO
-FROM (
-SELECT
-  [Ver_ID]
-  ,[Date],
-  (SELECT SUBSTRING
-    (
-      (
-        SELECT
-          Setup_path
-        FROM
-          [DBVersions].[dbo].[DBVer] b
-        WHERE a.ID = b.ID
-      ), 4, 4
-    )
-  ) AS 'SONO',
-  [ID]
-FROM
-  [DBVersions].[dbo].[DBVer] a
-) AS Result
-GROUP BY Result.SONO
-ORDER BY Result.SONO
-  ") %>
+<h0>Проверка актуальности версий</h0><br><br>
 <table border="2">
-      <tr>
-          <th>Version</th>
-          <th>Date</th>
-          <th>SONO</th>
-<% result.each do |row| %>
   <tr>
-    <td><%= row["Version"] %></td>
-    <td><%= row["Date"] %></td>
-    <td><%= row["SONO"] %></td>
+    <th>Версия</th>
+    <th>Посл. проверка</th>
+    <th>ИФНС</th>
+<% @lcdbv.each do |rlcdbv| %>
+  <tr>
+    <td><%= rlcdbv.Version %></td>
+    <td><%= rlcdbv.Date.strftime("%d.%m.%Y в %H:%M") %></td>
+    <td><%= rlcdbv.SONO %></td>
   </tr>
 <% end %>
-
 </table>

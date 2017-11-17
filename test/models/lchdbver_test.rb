@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DbverTest < ActiveSupport::TestCase
+class LchdbverTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

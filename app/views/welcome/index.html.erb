@@ -12,4 +12,18 @@
     <td><%= rlcdbv.SONO %></td>
   </tr>
 <% end %>
+</table><br><br>
+<h0>Дата установки последней версии</h0><br><br>
+<table border="2">
+  <tr>
+    <th>Версия</th>
+    <th>Время проверки</th>
+    <th>ИФНС</th>
+<% @fcdbv.each do |rfcdbv| %>
+  <tr>
+    <td><%= rfcdbv.Version %></td>
+    <td><%= rfcdbv.Date.strftime("%d.%m.%Y в %H:%M") %></td>
+    <td><%= rfcdbv.SONO %></td>
+  </tr>
+<% end %>
 </table>

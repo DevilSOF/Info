@@ -1,3 +1,3 @@
 class Lchdbver < ApplicationRecord
-  self.table_name = 'last_check_DBVer'
+  self.table_name = 'v_last_check_DBVer'
 end

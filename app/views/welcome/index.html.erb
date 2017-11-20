@@ -27,3 +27,20 @@
   </tr>
 <% end %>
 </table>
+
+<%= render 'form' %>
+
+<h0>Укажите необходимую версию ПО для просмотра даты</h0><br><br>
+<table border="2">
+  <tr>
+    <th>Версия</th>
+    <th>Время проверки</th>
+    <th>ИФНС</th>
+<% @sdbvers.each do |rsdbver| %>
+  <tr>
+    <td><%= rsdbver.Version %></td>
+    <td><%= rsdbver.Date.strftime("%d.%m.%Y в %H:%M") %></td>
+    <td><%= rsdbver.SONO %></td>
+  </tr>
+<% end %>
+</table>

@@ -15,8 +15,7 @@ class SdbverFinder
           FROM
             v_DBver
           WHERE
-            Ver_ID = '2.7.150.10'
-            --Ver_ID = '#{version}'
+            Ver_ID = '#{version}'
           GROUP BY SONO
           ORDER BY
             SONO

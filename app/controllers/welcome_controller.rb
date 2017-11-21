@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
       @fcdbv = Fchdbver.order(:SONO).all
 
       version = params[:version]
-      version = '2.7.150.01'
       @sdbvers = SdbverFinder.new(version).call
+
   end
 end

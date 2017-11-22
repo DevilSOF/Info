@@ -25,4 +25,3 @@
 
 # Ignore db config.
 /config/database.yml
-/app/views/welcome/_hidden.html.erb

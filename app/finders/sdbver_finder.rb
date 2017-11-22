@@ -13,7 +13,7 @@ class SdbverFinder
             MIN(Date) AS 'Date',
             SONO
           FROM
-            v_DBver
+            v_version_DBver
           WHERE
             Ver_ID = '#{version}'
           GROUP BY SONO
@@ -21,6 +21,6 @@ class SdbverFinder
             SONO
         SQL
 
-    Sdbver.find_by_sql(query)
+    SelectVersionDbver.find_by_sql(query)
   end
 end

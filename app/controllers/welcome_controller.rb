@@ -1,10 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-      @lcdbv = Lchdbver.order(:SONO).all
-      @fcdbv = Fchdbver.order(:SONO).all
+      @last_check_dbvers = LastCheckDbver.order(:SONO).all
+      @first_check_dbvers = FirstCheckDbver.order(:SONO).all
 
-      version = params[:version]
-      @sdbvers = SdbverFinder.new(version).call
-
+      version = params[:version] || @last_check_dbvers.first.Version
+      @select_version_dbvers = SdbverFinder.new(version).call
   end
 end
